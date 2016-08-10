@@ -1,2 +1,2 @@
-# ng-pioneer
-AngularJS Interview practice material, with latest UX practice and tools
+# welcome-es6
+getting started with es6 and babel
