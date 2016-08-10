@@ -2,20 +2,20 @@
 <html lang="en">
   <head>
   	<script src="node_modules/babel-core/browser.min.js"></script>
+  	<script src="node_modules/angular/angular.js"></script>
+<script src="./main.module.js"></script>
+	  <script src="./main.route.js"></script>
   </head>
-  <body>
-	  Hello World! 
-	  <div id="content"></div>
-	  <script type="text/babel">
-	  	class myClass {
-	  		hello() {
-	  			return "I am ES6";
-	  		}
-	  	}
+    <body ng-app="pioneer">
 
-	  	var obj = new myClass();
-	  	var temp = obj.hello();	
-	  	document.getElementById("content").innerText = obj.hello();
-	  </script>
+      <div ng-controller="indexCtrl">
+
+          <div ng-repeat="word in words track by $index">
+
+             {{word}}
+
+          </div>
+      </div>
+
   </body>
  </html>
