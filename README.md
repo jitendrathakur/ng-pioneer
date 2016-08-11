@@ -8,5 +8,7 @@ getting started with es6 and babel
 
 
 
+# b8f8019 print value from controller
 
-# b8f8019] print value from controller
+# 2ec3045 two controller on same dom
+
