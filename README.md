@@ -12,3 +12,4 @@ getting started with es6 and babel
 
 # 2ec3045 two controller on same dom
 
+# a4d7836 two controller communication using rootScope

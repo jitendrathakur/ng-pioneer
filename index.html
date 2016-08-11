@@ -5,6 +5,11 @@
   	<script src="node_modules/angular/angular.js"></script>
 <script src="./main.module.js"></script>
 	  <script src="./main.route.js"></script>
+	  <style type="text/css">
+	  	.active {
+	  		color: red;
+	  	}
+	  </style>
   </head>
     <body ng-app="pioneer">
 
@@ -13,7 +18,8 @@
 
           <div ng-repeat="word in words track by $index">
 
-             {{word}}
+          	<h3 ng-if="word == 'why'">Value set by second controller using RootScope</h3>
+            <span ng-class="{active: word == 'why'}">{{word}}</span>
 
           </div>
       </div>
@@ -24,6 +30,13 @@
           <div ng-repeat="animal in animals track by $index">
 
              {{animal}}
+
+          </div>
+
+          <h3>Value taken by First Controller Using Factory</h3>
+          <div ng-repeat="word in words track by $index">
+
+             {{word}}
 
           </div>
       </div>
