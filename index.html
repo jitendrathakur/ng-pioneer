@@ -8,11 +8,22 @@
   </head>
     <body ng-app="pioneer">
 
-      <div ng-controller="indexCtrl">
+    	<h1>First Controller</h1>
+      <div ng-controller="firstCtrl">
 
           <div ng-repeat="word in words track by $index">
 
              {{word}}
+
+          </div>
+      </div>
+
+      <h1>Second Controller</h1>
+      <div ng-controller="secondCtrl">
+
+          <div ng-repeat="animal in animals track by $index">
+
+             {{animal}}
 
           </div>
       </div>
