@@ -62,3 +62,12 @@ pioneer.directive('myTodo', function(){
     }
   };
 });
+
+pioneer.controller('outerCtrl', function($scope) {
+	$scope.foo = "outer";
+});
+
+
+pioneer.controller('innerCtrl', function($scope) {
+	$scope.foo = "inner";
+});

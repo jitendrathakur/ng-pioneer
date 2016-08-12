@@ -69,5 +69,14 @@
         <div my-todo list="todo" title="Directive title" get="firstTodo()"></div>
       </div>
 
+      <h1>Outer controller inner controller</h1>
+      <div ng-controller="outerCtrl">
+        Outer Controller {{foo}} <br/>
+        <div ng-controller="innerCtrl">
+          Inner Controller {{foo}} <br/>
+          Outer Controller {{$parent.foo}}
+        </div>
+      </div>
+
   </body>
  </html>

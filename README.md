@@ -17,3 +17,6 @@ getting started with es6 and babel
 # b8f2db2 two controller communcation using Factory
 
 # a3559a9 two controller communication using watch
+
+# 352b755 Directive with isolated scope (=, @, & and template)
+
