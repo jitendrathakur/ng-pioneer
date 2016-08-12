@@ -15,3 +15,5 @@ getting started with es6 and babel
 # a4d7836 two controller communication using rootScope
 
 # b8f2db2 two controller communcation using Factory
+
+# a3559a9 two controller communication using watch

@@ -51,5 +51,23 @@
 
       </div>
 
+      <hr/>
+
+      <h1>Third Controller with Directive</h1>
+      <code>
+        Directive: my-todo<br/>
+        list: exprestion it takes todo's value<br/>
+        title: takes content <br/>
+        isolated scope: works for this directive only<br/>
+        = : for expression value<br/>
+        @ : for content<br/>
+        & : for function<br/>
+        restrict: E element, A attribute<br/>
+        templateUrl: html works for this directive<br/>
+      </code>
+      <div ng-controller="thirdCtrl">
+        <div my-todo list="todo" title="Directive title" get="firstTodo()"></div>
+      </div>
+
   </body>
  </html>

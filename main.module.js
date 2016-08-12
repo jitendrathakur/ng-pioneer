@@ -13,26 +13,52 @@ pioneer.factory('commonService', function() {
 
 pioneer.controller('firstCtrl', function($rootScope, $scope, commonService){
 
-    $rootScope.birds = ['Cock','Duck','Eagle','Kite','Parrot'];
+  $rootScope.birds = ['Cock','Duck','Eagle','Kite','Parrot'];
 
-    $rootScope.currentTime = Date();
+  $rootScope.currentTime = Date();
 
-    console.log($scope.currentTime);
+  console.log($scope.currentTime);
 
-    commonService.data = $scope.birds;
+  commonService.data = $scope.birds;
 });
 
 pioneer.controller('secondCtrl', function($rootScope, $scope, commonService){
 
-    $scope.animals = ['viper','cat','dog','jackal','Ant'];
+  $scope.animals = ['viper','cat','dog','jackal','Ant'];
 
-    $scope.$watch('currentTime', function (newVal, oldVal) {
-    	$scope.thatTime = newVal;
-    });
+  $scope.$watch('currentTime', function (newVal, oldVal) {
+  	$scope.thatTime = newVal;
+  });
 
-    $rootScope.birds.push('Mynah');
+  $rootScope.birds.push('Mynah');
 
-    $scope.birds = commonService.data;
+  $scope.birds = commonService.data;
+
+});
+
+pioneer.controller('thirdCtrl', function($scope){
+
+  $scope.todo = [
+    {name: 'Create a custom directive', completed: true},
+    {name: 'Learn about restrict', completed: true},
+    {name: 'Master scopes', completed: false}
+  ];
+
+  $scope.firstTodo = function() {
+  	alert($scope.todo[0].name);
+  }
+
+});
 
 
+pioneer.directive('myTodo', function(){
+  return {
+    restrict: 'EA',
+    templateUrl: 'todo.html',
+    scope: {
+      list: '=',
+      title: '@',
+      get: '&'
+    }
+  };
 });
