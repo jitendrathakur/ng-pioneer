@@ -13,18 +13,26 @@ pioneer.factory('commonService', function() {
 
 pioneer.controller('firstCtrl', function($rootScope, $scope, commonService){
 
-    $rootScope.words = ['It','is','what','it','is'];
+    $rootScope.birds = ['Cock','Duck','Eagle','Kite','Parrot'];
 
-    commonService.data = $scope.words;
+    $rootScope.currentTime = Date();
+
+    console.log($scope.currentTime);
+
+    commonService.data = $scope.birds;
 });
 
 pioneer.controller('secondCtrl', function($rootScope, $scope, commonService){
 
-    $scope.animals = ['viper','cat','dog','jackal','owl']
+    $scope.animals = ['viper','cat','dog','jackal','Ant'];
 
-    $rootScope.words.push('why');
+    $scope.$watch('currentTime', function (newVal, oldVal) {
+    	$scope.thatTime = newVal;
+    });
 
-    $scope.words = commonService.data;
+    $rootScope.birds.push('Mynah');
 
-    console.log($scope.abroad);
+    $scope.birds = commonService.data;
+
+
 });

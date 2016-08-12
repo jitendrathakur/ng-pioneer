@@ -9,6 +9,9 @@
 	  	.active {
 	  		color: red;
 	  	}
+      .gray {
+        color: gray;
+      }
 	  </style>
   </head>
     <body ng-app="pioneer">
@@ -16,12 +19,15 @@
     	<h1>First Controller</h1>
       <div ng-controller="firstCtrl">
 
-          <div ng-repeat="word in words track by $index">
+          <div ng-repeat="bird in birds track by $index">
 
-          	<h3 ng-if="word == 'why'">Value set by second controller using RootScope</h3>
-            <span ng-class="{active: word == 'why'}">{{word}}</span>
+          	<h3 class="gray" ng-if="bird == 'Mynah'">Value set by second controller using RootScope</h3>
+            <span ng-class="{active: bird == 'Mynah'}">{{bird}}</span>
 
           </div>
+
+          <div>Current Time: {{currentTime}}</div>
+
       </div>
 
       <h1>Second Controller</h1>
@@ -33,12 +39,16 @@
 
           </div>
 
-          <h3>Value taken by First Controller Using Factory</h3>
-          <div ng-repeat="word in words track by $index">
+          <h3 class="gray">Value taken by First Controller Using Factory</h3>
+          <div ng-repeat="bird in birds track by $index">
 
-             {{word}}
+             {{bird}}
 
           </div>
+
+          <h3 class="gray">Current time take by First Controller using watch</h3>
+          <div>Current Time: {{currentTime}}</div>
+
       </div>
 
   </body>
