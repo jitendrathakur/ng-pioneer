@@ -20,3 +20,5 @@ getting started with es6 and babel
 
 # 352b755 Directive with isolated scope (=, @, & and template)
 
+# dadf605 Outer Inner Controller
+

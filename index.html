@@ -3,16 +3,9 @@
   <head>
   	<script src="node_modules/babel-core/browser.min.js"></script>
   	<script src="node_modules/angular/angular.js"></script>
-<script src="./main.module.js"></script>
+    <script src="./main.module.js"></script>
 	  <script src="./main.route.js"></script>
-	  <style type="text/css">
-	  	.active {
-	  		color: red;
-	  	}
-      .gray {
-        color: gray;
-      }
-	  </style>
+    <link rel="stylesheet" type="text/css" href="dist/assets/css/main.min.css" />
   </head>
     <body ng-app="pioneer">
 
@@ -74,7 +67,7 @@
         Outer Controller {{foo}} <br/>
         <div ng-controller="innerCtrl">
           Inner Controller {{foo}} <br/>
-          Outer Controller {{$parent.foo}}
+          Inner Controller {{$parent.foo}}
         </div>
       </div>
 
