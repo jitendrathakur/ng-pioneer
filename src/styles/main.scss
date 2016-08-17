@@ -1,12 +1,19 @@
+$bg-color: #fefefe;
+$active-font: #ff0000;
+$heading-font: #808080;
+
 body {
-	background-color:#fef;
-	h1 {
-		color: #45df45;
-	}
-	.active {
-		color: red;
-	}
+  background-color: $bg-color;
+
+  h1 {
+    color: $active-font;
+  }
+
+  .active {
+    color: $active-font;
+  }
+
   .gray {
-    color: gray;
+    color: $heading-font;
   }
 }

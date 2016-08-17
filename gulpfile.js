@@ -7,7 +7,8 @@ var gulp = require('gulp'),
   cache = require('gulp-cache'),
   livereload = require('gulp-livereload'),
   del = require('del'),
-  connect = require('gulp-connect');
+  connect = require('gulp-connect'),
+  sassLint = require('gulp-sass-lint');
 
 
 gulp.task('styles', function() {
@@ -20,10 +21,22 @@ gulp.task('styles', function() {
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
+
 gulp.task('connect', function() {
   connect.server();
 });
 
+
+gulp.task('scss-lint', function() {
+  return gulp.src('src/styles/*.s+(a|c)ss')
+    .pipe(sassLint({
+      'config': 'lint.yml'
+    }))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+});
+
+
 gulp.task('default', ['connect'], function() {
-  gulp.start('styles');
+  gulp.start('scss-lint', 'styles');
 });

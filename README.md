@@ -8,17 +8,19 @@ getting started with es6 and babel
 
 
 
-# b8f8019 print value from controller
+## b8f8019 print value from controller
 
-# 2ec3045 two controller on same dom
+## 2ec3045 two controller on same dom
 
-# a4d7836 two controller communication using rootScope
+## a4d7836 two controller communication using rootScope
 
-# b8f2db2 two controller communcation using Factory
+## b8f2db2 two controller communcation using Factory
 
-# a3559a9 two controller communication using watch
+## a3559a9 two controller communication using watch
 
-# 352b755 Directive with isolated scope (=, @, & and template)
+## 352b755 Directive with isolated scope (=, @, & and template)
 
-# dadf605 Outer Inner Controller
+## dadf605 Outer Inner Controller
+
+## 2fd8259 Gulp Added with css compiler and server connect
 
