@@ -3,11 +3,11 @@ var pioneer = angular.module('pioneer',  []);
 
 pioneer.factory('commonService', function() {
 
- var shared = {
+  var shared = {
     data: ''
   };
 
- return shared;
+  return shared;
 });
 
 
@@ -17,8 +17,6 @@ pioneer.controller('firstCtrl', function($rootScope, $scope, commonService){
 
   $rootScope.currentTime = Date();
 
-  console.log($scope.currentTime);
-
   commonService.data = $scope.birds;
 });
 
@@ -26,8 +24,8 @@ pioneer.controller('secondCtrl', function($rootScope, $scope, commonService){
 
   $scope.animals = ['viper','cat','dog','jackal','Ant'];
 
-  $scope.$watch('currentTime', function (newVal, oldVal) {
-  	$scope.thatTime = newVal;
+  $scope.$watch('currentTime', function (newVal) {
+    $scope.thatTime = newVal;
   });
 
   $rootScope.birds.push('Mynah');
@@ -45,8 +43,8 @@ pioneer.controller('thirdCtrl', function($scope){
   ];
 
   $scope.firstTodo = function() {
-  	alert($scope.todo[0].name);
-  }
+    alert($scope.todo[0].name);
+  };
 
 });
 
@@ -64,10 +62,10 @@ pioneer.directive('myTodo', function(){
 });
 
 pioneer.controller('outerCtrl', function($scope) {
-	$scope.foo = "outer";
+  $scope.foo = 'outer';
 });
 
 
 pioneer.controller('innerCtrl', function($scope) {
-	$scope.foo = "inner";
+  $scope.foo = 'inner';
 });

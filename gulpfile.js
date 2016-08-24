@@ -8,7 +8,8 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   del = require('del'),
   connect = require('gulp-connect'),
-  sassLint = require('gulp-sass-lint');
+  sassLint = require('gulp-sass-lint'),
+  eslint = require('gulp-eslint');
 
 
 gulp.task('styles', function() {
@@ -36,7 +37,15 @@ gulp.task('scss-lint', function() {
     .pipe(sassLint.failOnError())
 });
 
+gulp.task('eslint', () => {
+  //return gulp.src(['**/*.js','!node_modules/**'])
+  return gulp.src(['main.module.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
 
 gulp.task('default', ['connect'], function() {
-  gulp.start('scss-lint', 'styles');
+  gulp.start('scss-lint', 'styles', 'eslint');
 });
