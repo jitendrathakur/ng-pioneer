@@ -25,3 +25,5 @@ getting started with es6 and babel
 ## 2fd8259 Gulp Added with css compiler and server connect
 
 ## 817c412 Scss-lint integrated with task runner
+
+## f04cb28 eslint added to gulp task

@@ -9,8 +9,9 @@ var gulp = require('gulp'),
   del = require('del'),
   connect = require('gulp-connect'),
   sassLint = require('gulp-sass-lint'),
-  eslint = require('gulp-eslint');
-
+  eslint = require('gulp-eslint'),
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify');
 
 gulp.task('styles', function() {
   return sass('src/styles/main.scss', { style: 'expanded' })
@@ -45,7 +46,16 @@ gulp.task('eslint', () => {
     .pipe(eslint.failAfterError());
 });
 
+gulp.task('js', function () {
+  gulp.src(['src/**/module.js', 'src/**/*.js'])
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(notify({ message: 'JS task complete' }));
+});
 
 gulp.task('default', ['connect'], function() {
-  gulp.start('scss-lint', 'styles', 'eslint');
+  gulp.start('scss-lint', 'styles', 'eslint', 'js');
 });
