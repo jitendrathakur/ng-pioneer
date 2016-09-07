@@ -1,0 +1,5 @@
+<h4>{{title}}</h4>
+<div ng-repeat="item in list">
+  <input type="checkbox" ng-model="item.completed"> {{item.name}}
+</div>
+<button class="button" ng-click="get()">First Todo</button>
