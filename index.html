@@ -66,12 +66,17 @@
           Inner Controller {{$parent.foo}}
         </div>
       </div>
+
+      <div ui-view></div>
+      <!-- We'll also add some navigation: -->
+      <a ui-sref="state1">State 1</a>
+      <a ui-sref="state2">State 2</a>
+
       <!-- build:js scripts/app.js -->
       <!-- bower:js -->
       <!-- endbower -->
       <!-- endBuild -->
-      <script src="assets/js/vendor.js"></script>
-      <script src="assets/js/main.js"></script>
+      <script src="assets/js/main.min.js"></script>
 
 
   </body>

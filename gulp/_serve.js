@@ -19,5 +19,5 @@ gulp.task('serverTmp', function() {
 });
 gulp.task('serve', function() {
   gutil.env.type = "development";
-  runSequence('csslint', 'cssminify', 'jslint', 'jsminify', 'htmlminify', 'serverTmp');
+  runSequence('csslint', 'cssminify', 'jslint', 'jsminify', 'compile', 'htmlminify', 'serverTmp');
 });
