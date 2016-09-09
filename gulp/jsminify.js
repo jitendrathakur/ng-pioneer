@@ -14,9 +14,16 @@ import watchify from 'watchify';
 import babel from 'babelify';
 import path from 'path';
 
+// function bundle() {
+//   return b.bundle()
+//   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+//   .pipe(source)
+// }
+
 function compile(watch) {
   const sourcePath = path.join(conf.paths[gutil.env.type], 'assets/js');
-  const sourceFile = path.join(sourcePath, 'main.js');
+  const sourceFile = path.join(conf.paths.src, 'lib/main.module.js');
+  //const sourceFile = 'src/lib/main.module.js';
   var bundler = watchify(browserify(sourceFile, { debug: true }).transform(babel.configure({
     // Use all of the ES2015 spec
     presets: ["es2015"]
@@ -44,12 +51,8 @@ function compile(watch) {
 
 
 gulp.task('jsminify', function () {
-  gulp.src(['src/**/module.js', 'src/**/*.js'])
+  gulp.src(['src/**/main.module.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest(conf.destination(conf.paths[gutil.env.type], '/assets/js')))
-
-});
-
-gulp.task('compile', function () {
     return compile();
 });

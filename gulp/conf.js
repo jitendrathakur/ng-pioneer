@@ -5,6 +5,7 @@ export const paths = {
   development: '.tmp'
 };
 
+//Not in use
 export const destination = function(mode, path) {
   return `${mode}${path}`;
 }

@@ -1,6 +1,7 @@
+import './users/users.module.js';
 import uiRouter from 'angular-ui-router';
 
-var pioneer = angular.module('pioneer',  [uiRouter]);
+var pioneer = angular.module('pioneer',  [uiRouter, 'users']);
 pioneer.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider

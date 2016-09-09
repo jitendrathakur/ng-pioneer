@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+  </head>
+    <body ng-app="pioneer">
+
+    	<h1>First Controller</h1>
+      <div ng-controller="firstCtrl">
+
+          <div ng-repeat="bird in birds track by $index">
+
+          	<h3 class="gray" ng-if="bird == 'Mynah'">Value set by second controller using RootScope</h3>
+            <span ng-class="{active: bird == 'Mynah'}">{{bird}}</span>
+
+          </div>
+
+          <div>Current Time: {{currentTime}}</div>
+
+      </div>
+
+      <h1>Second Controller</h1>
+      <div ng-controller="secondCtrl">
+
+          <div ng-repeat="animal in animals track by $index">
+
+             {{animal}}
+
+          </div>
+
+          <h3 class="gray">Value taken by First Controller Using Factory</h3>
+          <div ng-repeat="bird in birds track by $index">
+
+             {{bird}}
+
+          </div>
+
+          <h3 class="gray">Current time take by First Controller using watch</h3>
+          <div>Current Time: {{currentTime}}</div>
+
+      </div>
+
+      <hr/>
+
+      <h1>Third Controller with Directive</h1>
+      <code>
+        Directive: my-todo<br/>
+        list: exprestion it takes todo's value<br/>
+        title: takes content <br/>
+        isolated scope: works for this directive only<br/>
+        = : for expression value<br/>
+        @ : for content<br/>
+        & : for function<br/>
+        restrict: E element, A attribute<br/>
+        templateUrl: html works for this directive<br/>
+      </code>
+      <div ng-controller="thirdCtrl">
+        <div my-todo list="todo" title="Directive title" get="firstTodo()"></div>
+      </div>
+
+      <h1>Outer controller inner controller</h1>
+      <div ng-controller="outerCtrl">
+        Outer Controller {{foo}} <br/>
+        <div ng-controller="innerCtrl">
+          Inner Controller {{foo}} <br/>
+          Inner Controller {{$parent.foo}}
+        </div>
+      </div>
+
+      <div ui-view></div>
+      <!-- We'll also add some navigation: -->
+      <a ui-sref="state1">State 1</a>
+      <a ui-sref="state2">State 2</a>
+
+      <!-- build:js scripts/app.js -->
+      <!-- bower:js -->
+      <!-- endbower -->
+      <!-- endBuild -->
+      <script src="assets/js/main.min.js"></script>
+
+
+  </body>
+ </html>
