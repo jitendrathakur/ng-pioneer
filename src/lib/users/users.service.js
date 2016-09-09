@@ -6,8 +6,16 @@ export default class UserService {
   /**
    * Constructor
    */
-  constructor() {
+  constructor($http) {
     'ngInject';
+    this.$http = $http;
   }
+
+  fetchData() {
+    return this.$http({
+        method: "GET",
+        url: "https://jsonplaceholder.typicode.com/users"
+    });
+  };
 
 }

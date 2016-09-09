@@ -9,12 +9,14 @@ export default $stateProvider => {
   $stateProvider.state('users', {
     url: '/users',
     views: {
-      'context@layout': {
+      'context': {
         templateUrl: 'lib/users/context/context.html',
         controller: ContextController,
-        controllerAs: 'contextCtrl'
+        controllerAs: 'userCtrl'
       }
     },
-    resolve: {}
+    resolve: {
+      usersList: (UserService) => UserService.fetchData()
+    }
   });
 };
