@@ -14,7 +14,8 @@ export default class UserService {
   fetchData() {
     return this.$http({
         method: "GET",
-        url: "https://jsonplaceholder.typicode.com/users"
+        //url: "https://jsonplaceholder.typicode.com/users"
+        url: 'http://localhost:8082/users'
     });
   };
 
